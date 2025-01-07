@@ -30,17 +30,23 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
           .status(422)
           .send(`Missing required param: image_url`);
       }
-      // 2. call filterImageFromURL(image_url) to filter the image
+
+      // call filterImageFromURL(image_url) to filter the image
       filterImageFromURL(image_url)
         .then((result) => {
-          // 3. send the resulting file in the response
-          res.sendFile(result);
-          // 4. deletes any files on the server on finish of the response
+          // send the resulting file in the response
+          res
+            .status(200)
+            .sendFile(result);
+
+          // deletes any files on the server on finish of the response
           res.on('finish', async () => await deleteLocalFiles([result]));
         })
         .catch((error) => {
           console.log(error);
-          res.status(500).send(error);
+          res
+          .status(500)
+          .send(error);
         })
     });
   //! END @TODO1

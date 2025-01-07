@@ -45,8 +45,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
         .catch((error) => {
           console.log(error);
           res
-          .status(500)
-          .send(error);
+            .status(500)
+            .send(error);
         })
     });
   //! END @TODO1

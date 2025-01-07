@@ -1,0 +1,99 @@
+PS C:\workspace\apps\udacity\cloud-dev> eb init
+
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+6) ap-south-1 : Asia Pacific (Mumbai)
+7) ap-southeast-1 : Asia Pacific (Singapore)
+8) ap-southeast-2 : Asia Pacific (Sydney)
+9) ap-northeast-1 : Asia Pacific (Tokyo)
+10) ap-northeast-2 : Asia Pacific (Seoul)
+11) sa-east-1 : South America (Sao Paulo)
+12) cn-north-1 : China (Beijing)
+13) cn-northwest-1 : China (Ningxia)
+14) us-east-2 : US East (Ohio)
+15) ca-central-1 : Canada (Central)
+16) eu-west-2 : EU (London)
+17) eu-west-3 : EU (Paris)
+18) eu-north-1 : EU (Stockholm)
+19) eu-south-1 : EU (Milano)
+20) ap-east-1 : Asia Pacific (Hong Kong)
+21) me-south-1 : Middle East (Bahrain)
+22) il-central-1 : Middle East (Israel)
+23) af-south-1 : Africa (Cape Town)
+24) ap-southeast-3 : Asia Pacific (Jakarta)
+25) ap-northeast-3 : Asia Pacific (Osaka)
+(default is 3): 1
+
+
+Enter Application Name
+(default is "cloud-dev"): image-processing-nd9990
+Application image-processing-nd9990 has been created.
+
+It appears you are using Node.js. Is this correct?
+(Y/n): Y
+Select a platform branch.
+1) Node.js 22 running on 64bit Amazon Linux 2023
+2) Node.js 20 running on 64bit Amazon Linux 2023
+3) Node.js 18 running on 64bit Amazon Linux 2023
+3) Node.js 18 running on 64bit Amazon Linux 2023
+4) Node.js 18 running on 64bit Amazon Linux 2
+(default is 1): 2
+
+Do you wish to continue with CodeCommit? (Y/n): n
+Do you want to set up SSH for your instances?
+(Y/n): Y
+
+Select a keypair.
+1) vockey
+2) [ Create new KeyPair ]
+(default is 1):
+
+PS C:\workspace\apps\udacity\cloud-dev>eb create
+Creating application version archive "app-bcae-250107_182453696882".
+Uploading: [##################################################] 100% Done...
+Environment details for: image-processing-nd9990-dev
+  Application name: image-processing-nd9990
+  Region: us-east-1
+  Deployed Version: app-bcae-250107_182453696882
+  Environment ID: e-m2iuqatjpd
+  Platform: arn:aws:elasticbeanstalk:us-east-1::platform/Node.js 20 running on 64bit Amazon Linux 2023/6.4.1
+  Tier: WebServer-Standard-1.0
+  CNAME: image-processing-nd9990-dev.us-east-1.elasticbeanstalk.com
+  Updated: 2025-01-07 09:25:16.947000+00:00
+Printing Status:
+2025-01-07 09:25:15    INFO    createEnvironment is starting.
+2025-01-07 09:25:17    INFO    Using elasticbeanstalk-us-east-1-010875447555 as Amazon S3 storage bucket for environment data.
+2025-01-07 09:25:39    INFO    Created security group named: sg-0b3e6cd80c6666780
+2025-01-07 09:25:54    INFO    Created target group named: arn:aws:elasticloadbalancing:us-east-1:010875447555:targetgroup/awseb-AWSEB-YBCHVWFHPQO9/a14e911aba8f642a
+2025-01-07 09:25:54    INFO    Created security group named: awseb-e-m2iuqatjpd-stack-AWSEBSecurityGroup-25sY9J6Np1gl
+2025-01-07 09:25:54    INFO    Created Auto Scaling launch configuration named: awseb-e-m2iuqatjpd-stack-AWSEBAutoScalingLaunchConfiguration-k6kXa3mHJyXO
+2025-01-07 09:26:25    INFO    Created Auto Scaling group named: awseb-e-m2iuqatjpd-stack-AWSEBAutoScalingGroup-g9MMG0aGAvo6
+2025-01-07 09:26:25    INFO    Waiting for EC2 instances to launch. This may take a few minutes.
+2025-01-07 09:26:25    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-1:010875447555:scalingPolicy:6da49563-0ae9-4171-baef-77040c969faa:autoScalingGroupName/awseb-e-m2iuqatjpd-stack-AWSEBAutoScalingGroup-g9MMG0aGAvo6:policyName/awseb-e-m2iuqatjpd-stack-AWSEBAutoScalingScaleDownPolicy-67OQA3qYhUXd
+2025-01-07 09:26:25    INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-1:010875447555:scalingPolicy:5f7cc5c3-860e-4654-8429-8945acc88fee:autoScalingGroupName/awseb-e-m2iuqatjpd-stack-AWSEBAutoScalingGroup-g9MMG0aGAvo6:policyName/awseb-e-m2iuqatjpd-stack-AWSEBAutoScalingScaleUpPolicy-1crOxoVczqWp
+2025-01-07 09:26:25    INFO    Created CloudWatch alarm named: awseb-e-m2iuqatjpd-stack-AWSEBCloudwatchAlarmLow-bWKKJHRQlM6v
+2025-01-07 09:26:40    INFO    Created CloudWatch alarm named: awseb-e-m2iuqatjpd-stack-AWSEBCloudwatchAlarmHigh-2YLGLXwnj7Xk
+2025-01-07 09:28:13    INFO    Created load balancer named: arn:aws:elasticloadbalancing:us-east-1:010875447555:loadbalancer/app/awseb--AWSEB-t2jyqUaaSzlA/fd49b9adb5853768
+2025-01-07 09:28:15    INFO    Created Load Balancer listener named: arn:aws:elasticloadbalancing:us-east-1:010875447555:listener/app/awseb--AWSEB-t2jyqUaaSzlA/fd49b9adb5853768/912a9d4035690eeb
+2025-01-07 09:28:24    INFO    Instance deployment completed successfully.
+2025-01-07 09:29:29    INFO    Successfully launched environment: image-processing-nd9990-dev
+
+Alert: An update to the EB CLI is available. Run "pip install --upgrade awsebcli" to get the latest version.    
+PS C:\workspace\apps\udacity\cloud-dev>
+PS C:\workspace\apps\udacity\cloud-dev> eb deploy
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'server.js', LF will be replaced by CRLF the next time Git touches it
+Creating application version archive "app-bcae-250107_183546384352".
+Uploading: [##################################################] 100% Done...
+2025-01-07 09:36:06    INFO    Environment update is starting.      
+2025-01-07 09:36:10    INFO    Deploying new version to instance(s).
+2025-01-07 09:36:21    INFO    Instance deployment completed successfully.
+2025-01-07 09:36:28    INFO    New application version was deployed to running EC2 instances.
+2025-01-07 09:36:28    INFO    Environment update completed successfully.
+
+Alert: An update to the EB CLI is available. Run "pip install --upgrade awsebcli" to get the latest version.
+PS C:\workspace\apps\udacity\cloud-dev> 
